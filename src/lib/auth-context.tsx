@@ -3,7 +3,6 @@ import {User} from "@/types";
 import { createContext , useCallback, useContext, useEffect, useState  } from "react";
 import { useRouter } from "next/navigation";
 import { api, setAcccessToken } from "@/lib/api";
-import { data } from "react-router-dom";
 
 type AuthContextValue = {
     user : User | null ;
@@ -31,7 +30,7 @@ export function AuthProvider({children} : {children : React.ReactNode}){
             setUser(null);
             setAcccessToken(null);
         })
-        .finally(() => setLoading(false));
+        .finally(() => {setLoading(false)});
     },[]);
 
     const login = useCallback(async(email : string, password : string) => {

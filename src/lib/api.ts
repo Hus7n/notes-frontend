@@ -1,5 +1,5 @@
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "https://localhost:4000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000";
 
 let accessToken : string | null = null ;
 let refreshPromise : Promise<string | null> | null = null ;
@@ -39,7 +39,7 @@ export async function apiFetch<T>(path:string , options : RequestInit = {}) : Pr
     }
 
     if(!(options.body instanceof FormData)) {
-        headers.set("Content-Type" , "application / json");
+        headers.set("Content-Type" , "application/json");
     }
 
     let res = await fetch(`${API_URL}${path}` , {
@@ -93,7 +93,7 @@ export const api = {
             user : import("@/types").User
         }>(
             "/api/auth/login",
-            {method : "POST " , body : JSON.stringify(body)}
+            {method : "POST" , body : JSON.stringify(body)}
         ),
 
     logout: () =>
@@ -124,7 +124,7 @@ export const api = {
 
         const qs = search.toString();
         return apiFetch<{ notes : import("@/types").Note[]}>(
-            `/api/notes ${qs ? `?${qs}` : ""}`
+            `/api/notes${qs ? `?${qs}` : ""}`
         );
     },
 
@@ -149,7 +149,7 @@ export const api = {
         }>
     ) => 
         apiFetch<{note : import("@/types").Note}>(`/api/notes/${id}`,{
-            method : "POST",
+            method : "PATCH",
             body : JSON.stringify(body),
         }),
 
