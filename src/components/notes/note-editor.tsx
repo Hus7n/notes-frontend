@@ -32,15 +32,30 @@ export function NoteEditor({noteId} : {noteId : string}) {
     const isOwner = note?.role === "owner";
 
     useEffect(() => {
-        Promise.all([api.getNote(noteId) , api.getImages(noteId)])
-        .then (([noteRes , imgRes]) => {
+    async function loadNote() {
+        try {
+            const noteRes = await api.getNote(noteId);
+
             setNote(noteRes.note);
             setTitle(noteRes.note.title);
             setContent(noteRes.note.content);
-            setImages(imgRes.images);
-        })
-        .finally(() => setLoading(false));
-    },[noteId]);
+
+            try {
+                const imgRes = await api.getImages(noteId);
+                setImages(imgRes.images);
+            } catch (err) {
+                console.error("Failed to load images:", err);
+                setImages([]);
+            }
+        } catch (err) {
+            console.error("Failed to load note:", err);
+            setNote(null);
+        } finally {
+            setLoading(false);
+        }
+    }
+    loadNote();
+}, [noteId]);
 
     const handleRealtimeUpdate = useCallback((updated : Note) => {
         setNote(updated);
