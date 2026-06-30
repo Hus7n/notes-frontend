@@ -6,7 +6,7 @@ export default function LoginPage (){
             <p className="mb-2 text-sm font-medium uppercase tracking-widest text-violet-200/80">
             Welcome Back
             </p>
-            <h1 className="mb-8 text-3xl font-semibold text-white">
+            <h1 className=" mt-2 mb-8 text-3xl font-semibold text-white">
                 Sign In
             </h1>
             <LoginForm/>

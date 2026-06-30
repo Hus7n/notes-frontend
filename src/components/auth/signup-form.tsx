@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import {Input} from "@/components/ui/input";
-import { Link } from "lucide-react";
+import  Link  from "next/link";
 import {Button} from "@/components/ui/button";
 
 type FormData = z.infer<typeof signupSchema>;
@@ -51,12 +51,13 @@ export function SignupForm(){
                 )}
             </div>
             {error && <p className="text-sm text-red-300">{error}</p>}
-            <Button type="submit" className="w-full" loading = {isSubmitting}>
+            <Button type="submit" className="mt-6 w-full" loading = {isSubmitting}>
                 Create Account
             </Button>
-                <p className="text-center text-sm text-glass-muted">
+                <p className="mt-6 text-center text-sm text-glass-muted">
                     Already have an account ? {""}
-                    <Link href = "/login" className = "text-white underline underline-offset-4 hover:text-violet-200">
+                    <Link href = "/login" 
+                    className = "font-medium text-white underline underline-offset-4 hover:text-violet-200">
                     Log In
                     </Link>
                 </p>

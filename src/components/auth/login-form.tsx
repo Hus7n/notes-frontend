@@ -7,7 +7,7 @@ import {useForm} from "react-hook-form";
 import{zodResolver} from "@hookform/resolvers/zod";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
-import { Link } from "lucide-react";
+import  Link  from "next/link";
 
 type FormData =  z.infer<typeof loginSchema>;
 
@@ -38,12 +38,13 @@ export function LoginForm(){
                 <Input type = "password" {...register("password")}/>
             </div>
             {error && <p className="text-sm text-red-300">{error}</p>}
-            <Button type="submit" className="w-full" loading = {isSubmitting}>
+            <Button type="submit" className=" mt-6 w-full" loading = {isSubmitting}>
                 Log In
             </Button>
-            <p className="text-centre text-sm text-glass-muted">
-                No account?{" "}
-                <Link href="/signup" className = "text-white underline underline-offset-4 hover:text-violet-200">
+            <p className="mt-6 text-center text-sm text-glass-muted">
+                Dont have an account?{" "}
+                <Link href="/signup" 
+                className = "font-medium text-white underline underline-offset-4 hover:text-violet-200">
                     Sign Up
                 </Link>
             </p>
