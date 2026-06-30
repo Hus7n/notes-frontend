@@ -9,6 +9,7 @@ import {useForm} from "react-hook-form";
 import { api } from "@/lib/api";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { UserPlus, UserRoundPlus } from "lucide-react";
 
 type FormData = z.infer<typeof shareSchema>
 
@@ -60,6 +61,7 @@ export function ShareModal({
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
             <div className="glass-strong w-full max-w-md rounded-3xl p-6 shadow-glass-lg md:p-8">
                 <div className="mb-6 flex items-center justify-between">
+                    <UserPlus />
                     <h2 className="text-lg font-semibold text-white">Share note</h2>
                     <button onClick={onClose}
                     className="rounded-lg px-2 py-1 text-sm text-glass-muted transition hover:bg-white/10 hover:text-white">
@@ -68,7 +70,9 @@ export function ShareModal({
 
                 <form className="flex gap-2" onSubmit={handleSubmit(onSubmit)}>
                     <Input placeholder="Recipient email" {...register("email")}/>
-                    <Button type="submit" loading = {isSubmitting}>Share</Button>
+                    <Button type="submit" loading = {isSubmitting}>
+                        <UserRoundPlus/>
+                        Share</Button>
                 </form>
                 {error && <p className="mt-2 text-sm text-red-300">{error}</p>}
 

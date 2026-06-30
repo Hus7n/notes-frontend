@@ -5,6 +5,7 @@ import { NoteImage } from "@/types";
 import { useState , useRef } from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { ImagePlus } from "lucide-react";
 
 export function ImageGallery({
 noteId ,
@@ -58,6 +59,7 @@ onChange ,
                 loading={uploading}
                 onClick={() => inputRef.current?.click()}
                 >
+                    <ImagePlus/>
                     Upload Image
                 </Button>
                 </>

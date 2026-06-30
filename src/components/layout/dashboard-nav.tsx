@@ -14,8 +14,8 @@ export function DashboardNav(){
     const pathname = usePathname();
 
     return(
-        <nav className="glass-subtle flex flex-wrap gap-2 rounded-2xl p-2">
-            {links.map((link) =>(
+        <nav className="glass-subtle inline-flex gap-2 rounded-2xl p-2">            
+        {links.map((link) =>(
                 <Link
                 key={link.href}
                 href={link.href}
