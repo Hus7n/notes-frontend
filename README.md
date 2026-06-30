@@ -1,36 +1,144 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Notes App
 
-## Getting Started
+A modern, secure, full-stack Notes application built with **Next.js**, **Node.js**, **Express**, and **PostgreSQL**. The application allows users to create, organize, pin, search, and securely share notes with other registered users while maintaining complete ownership and edit permissions.
 
-First, run the development server:
+## 🚀 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Frontend:** https://notes-frontend-ruby.vercel.app
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Authentication
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* User Registration
+* Secure Login
+* JWT Access Token Authentication
+* Refresh Token Authentication
+* Protected Routes
+* Automatic Token Refresh
+* Secure Logout
 
-## Learn More
+## Notes
 
-To learn more about Next.js, take a look at the following resources:
+* Create Notes
+* Edit Notes
+* Delete Notes
+* Pin / Unpin Notes
+* Search Notes
+* Rich Text Content
+* Autosave Ready Architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Image Support
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Upload Images
+* Multiple Images per Note
+* Automatic Image Compression using Sharp
+* WebP Image Conversion
+* Local Storage Support
+* Vercel Blob Storage Ready
 
-## Deploy on Vercel
+## Sharing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Share Notes with Registered Users
+* Read-Only Shared Notes
+* Owner-Only Editing
+* Private Notes by Default
+* Shared Notes Dashboard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Dashboard
+
+* My Notes
+* Shared Notes
+* Pinned Notes
+* Fast Search
+* Responsive Grid Layout
+* Empty State UI
+
+## UI
+
+* Modern Glassmorphism Design
+* Responsive Layout
+* Mobile Friendly
+* Beautiful Card-Based Interface
+* Custom Components
+* Inter Font
+* Loading Indicators
+* Error Handling
+
+# 🛠 Tech Stack
+
+## Frontend
+
+* Next.js 15
+* React
+* TypeScript
+* Tailwind CSS
+* React Hook Form
+* Zod
+* Lucide React Icons
+
+## Backend
+
+* Node.js
+* Express.js
+* TypeScript
+* PostgreSQL
+* pg
+* Multer
+* Sharp
+* JWT
+* Cookie Parser
+* CORS
+
+## Database
+
+PostgreSQL
+
+Hosted on **Neon**
+
+## Deployment
+
+Frontend
+
+* Vercel
+
+Backend
+
+* Render
+
+Database
+
+* Neon PostgreSQL
+
+# 🔐 Authentication Flow
+
+1. User signs up
+2. Server creates account
+3. Access Token returned
+4. Refresh Token stored securely
+5. Protected APIs require Access Token
+6. Access Token automatically refreshes
+7. Logout invalidates session
+
+
+# 📖 What I Learned
+
+During this project I gained practical experience with:
+
+* Full Stack Development
+* Authentication using JWT
+* Refresh Token Flow
+* Role-Based Authorization
+* REST API Design
+* PostgreSQL
+* Image Upload Handling
+* File Compression using Sharp
+* Secure Backend Architecture
+* Protected Routes
+* Form Validation with Zod
+* React Hook Form
+* Deployment using Vercel & Render
+* Environment Variables
+* CORS Configuration
+* Production Debugging
+* Git & GitHub Workflow
